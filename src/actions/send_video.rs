@@ -41,9 +41,9 @@ pub async fn send_video(bot: Bot, msg: Message, post: OmarPost) -> ResponseResul
         }
         _ => {
             log::warn!("download failed for {}", post.url);
-            bot.send_message(msg.chat.id, "Nigga fuck you")
-                .reply_parameters(post.reply_to_sender)
-                .await?;
+            //bot.send_message(msg.chat.id, "Nigga fuck you")
+            //    .reply_parameters(post.reply_to_sender)
+            //    .await?;
         }
     };
 
@@ -97,7 +97,11 @@ pub fn extract_link(msg: &Message) -> Option<String> {
             _ => continue,
         };
 
-        if url.contains("tiktok.com") || url.contains("instagram.com") || url.contains("x.com") {
+        if url.contains("tiktok.com")
+            || url.contains("instagram.com")
+            || url.contains("x.com")
+            || url.contains("youtube.com")
+        {
             return Some(url);
         }
     }

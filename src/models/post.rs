@@ -5,5 +5,6 @@ pub struct OmarPost {
     pub user: String,
     pub keyboard: InlineKeyboardMarkup,
     pub reply_to_sender: ReplyParameters,
+    #[warn(dead_code)]
     pub reply_to_sender_reply: ReplyParameters,
 }
