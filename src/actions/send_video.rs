@@ -101,6 +101,7 @@ pub fn extract_link(msg: &Message) -> Option<String> {
             || url.contains("instagram.com")
             || url.contains("x.com")
             || url.contains("youtube.com")
+            || url.contains("threads.com")
         {
             return Some(url);
         }
